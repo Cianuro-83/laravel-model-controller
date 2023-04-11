@@ -16,7 +16,19 @@
 </head>
 
 <body>
-
+<main>
+    @forelse ($movies as $movie)
+            <div class="col-3">
+                <h3>{{ $movie->title }}</h3>
+                <h6>{{ $movie->original_title }}</h6>
+                <p>{{ $movie->nationality }}</p>
+                <p>{{ $movie->date }}</p>
+                <p>{{ $movie->vote}}</p>
+            </div>
+        @empty
+            
+        @endforelse
+</main>
 </body>
 
 </html>
