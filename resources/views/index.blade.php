@@ -16,18 +16,24 @@
 </head>
 
 <body>
-<main>
+    <h1 class="text-center my-4 text-uppercase text-warning">movie list</h1>
+<main class="container my-5">
     @forelse ($movies as $movie)
-            <div class="col-3">
-                <h3>{{ $movie->title }}</h3>
-                <h6>{{ $movie->original_title }}</h6>
-                <p>{{ $movie->nationality }}</p>
-                <p>{{ $movie->date }}</p>
-                <p>{{ $movie->vote}}</p>
+    <div class="">
+        <div class="card text-bg-success mb-3" style="width: 25rem; height: 18rem">
+            <div class="card-header text-center text-bg-danger text-uppercase text-info"> <h3>{{ $movie->title }}</h3></div>
+            <div class="card-body">
+                <p><span class="fw-bolder text-capitalize">original title: </span>{{ $movie->original_title }}</p>
+                <p><span class="fw-bolder text-capitalize">nationality: </span>{{ $movie->nationality }}</p>
+                <p><span class="fw-bolder text-capitalize">date: </span>{{ $movie->date }}</p>
+                <p><span class="fw-bolder text-capitalize">vote: </span>{{ $movie->vote }}</p>
             </div>
-        @empty
-            
-        @endforelse
+          </div>
+
+        </div> 
+    </div>
+ @empty
+            @endforelse
 </main>
 </body>
 
